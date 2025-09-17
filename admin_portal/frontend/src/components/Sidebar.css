@@ -1,0 +1,74 @@
+/* Container */
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f5f5f5 0%, #f1f2f5 100%);
+    /* dark slate/gray */
+    border-radius: 0;
+}
+
+/* Header */
+.sidebar .brand {
+    font-size: 1.25rem;
+    letter-spacing: 0.06em;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0;
+}
+
+/* Links */
+.sidebar .nav {
+    --accent: #28a745;
+    /* indigo */
+    --text: gray;
+    /* slate-300 */
+    --hover-bg: #e6fff2;
+    --active-bg: #f5f5f5;
+    --active-text: #222;
+}
+
+.sidebar-link.nav-link {
+    color: var(--text);
+    background: #f5f5f5;
+    border-radius: 0;
+    padding: 14px 18px;
+    position: relative;
+    margin-bottom: 18px;
+    margin-top: 0;
+    box-shadow: 0 2px 12px 0 rgba(40,167,69,0.18); /* green shadow */
+    border: 1px solid #e0e0e0;
+    transition: background-color .2s, color .2s;
+}
+
+.sidebar-link.nav-link:hover {
+    background: #e6fff2;
+    color: #28a745;
+}
+
+/* Active state is very visible */
+.sidebar-link.nav-link.active,
+.sidebar-link.nav-link[aria-current="page"] {
+    background: var(--active-bg) !important;
+    color: var(--active-text) !important;
+    box-shadow: 0 4px 20px 0 rgba(40,167,69,0.25); /* stronger green shadow */
+    border-radius: 0;
+}
+
+.sidebar-link.nav-link.active::before,
+.sidebar-link.nav-link[aria-current="page"]::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: var(--accent);
+    border-radius: 0 6px 6px 0;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+/* Keyboard focus */
+.sidebar-link.nav-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
